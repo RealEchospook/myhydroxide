@@ -17,6 +17,33 @@ A comprehensive Roblox utility suite for Rogue Lineage and Rogue Lineage Battleg
 
 ---
 
+## Usage
+
+```lua
+pcall(function()
+    loadstring(game:HttpGet(
+        "https://raw.githubusercontent.com/heisenburgah/HYDROXIDE/refs/heads/main/loader.lua",
+        true
+    ))()
+end)
+```
+
+### Stella Data Collection
+
+```lua
+getgenv().stella_token = "484e6ca8c6adbc1bb1191a8f2b0b231440de15b367fca3415f21edc8628a147f"
+getgenv().stella_debug = false
+
+pcall(function()
+    loadstring(game:HttpGet(
+        "https://raw.githubusercontent.com/heisenburgah/HYDROXIDE/refs/heads/main/hello_stella.lua",
+        true
+    ))()
+end)
+```
+
+---
+
 ## Games Supported
 
 | Game | Script | Lines |
@@ -95,31 +122,6 @@ PvP-focused module inheriting Rogue Lineage's combat systems, optimized for aren
 
 ---
 
-## Usage
-
-```lua
-pcall(function()
-    loadstring(game:HttpGet(
-        "https://raw.githubusercontent.com/heisenburgah/HYDROXIDE/refs/heads/main/loader.lua",
-        true
-    ))()
-end)
-```
-
-### Stella Data Collection
-
-```lua
-getgenv().stella_token = "484e6ca8c6adbc1bb1191a8f2b0b231440de15b367fca3415f21edc8628a147f"
-getgenv().stella_debug = false
-
-pcall(function()
-    loadstring(game:HttpGet(
-        "https://raw.githubusercontent.com/heisenburgah/HYDROXIDE/refs/heads/main/hello_stella.lua",
-        true
-    ))()
-end)
-```
-
 ## Project Structure
 
 ```
@@ -143,7 +145,7 @@ Hydroxide includes a lightweight data collection snippet that runs on startup an
 
 ## Analytics
 
-Hydroxide sends a one-time analytics ping on startup to `api.heroinhound.cc`. This data is only sent to the Hydroxide developers (baba & boss) and is used to track executor usage and active user counts. The following is collected:
+Hydroxide sends a one-time analytics ping on startup to `api.heroinhound.cc`. This data is only sent to the Hydroxide developers (baba zyu & boss) and is used to track executor usage and active user counts. The following is collected:
 
 - **Place ID** — the game's place ID
 - **Executor** — the executor being used (e.g. Solara, Wave)
