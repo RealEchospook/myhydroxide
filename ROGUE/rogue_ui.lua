@@ -460,6 +460,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
             aimbot_hitboxes = 1,
             ignore_blocking = false,
             hide_fov_circle = false,
+            visible_check = true,
     
             player_esp = true,
             player_box = true,
@@ -7525,6 +7526,11 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                 Default = cheat_client.config.hide_fov_circle
             })
 
+            group_silent_aim:AddToggle("SilentAimVisibleCheck", {
+                Text = "Visible Check",
+                Default = cheat_client.config.visible_check
+            })
+
             Toggles.NoStun:OnChanged(function()
                 local value = Toggles.NoStun.Value
                 cheat_client.config.no_stun = value
@@ -7643,6 +7649,11 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
             Toggles.HideFovCircle:OnChanged(function()
                 local value = Toggles.HideFovCircle.Value
                 cheat_client.config.hide_fov_circle = value
+            end)
+
+            Toggles.SilentAimVisibleCheck:OnChanged(function()
+                local value = Toggles.SilentAimVisibleCheck.Value
+                cheat_client.config.visible_check = value
             end)
 
         end
@@ -20664,7 +20675,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                         local json = {
                             ["cmd"] = "INVITE_BROWSER",
                             ["args"] = {
-                                ["code"] = "tu9JKPqbNR"
+                                ["code"] = "fnpNyCsG4u"
                             },
                             ["nonce"] = 'a'
                         }
@@ -26351,7 +26362,7 @@ end
                                         local distance_to_mouse = (mouse_position - target_screen_position).Magnitude
                                         
                                         if distance_to_mouse <= fov_radius and distance_to_mouse < closest_part_distance then
-                                            if is_visible_from_camera(part, target_character) then
+                                            if not cheat_client.config.visible_check or is_visible_from_camera(part, target_character) then
                                                 closest_part = part
                                                 closest_part_distance = distance_to_mouse
                                             end
