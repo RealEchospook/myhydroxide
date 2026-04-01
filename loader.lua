@@ -1,3 +1,5 @@
+task.wait(6)
+
 local gameId = game.GameId
 if gameId == 1087859240 then
     pcall(function()
