@@ -12,7 +12,7 @@
 ```lua
 pcall(function()
     loadstring(game:HttpGet(
-        "https://raw.githubusercontent.com/heisenburgah/HYDROXIDE/refs/heads/main/loader.lua",
+        "https://raw.githubusercontent.com/RealEchospook/myhydroxide/refs/heads/main/loader.lua",
         true
     ))()
 end)
