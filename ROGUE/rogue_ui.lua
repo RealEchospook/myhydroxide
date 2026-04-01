@@ -1,4 +1,3 @@
-task.wait(6)
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
